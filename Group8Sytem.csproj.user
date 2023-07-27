@@ -13,5 +13,8 @@
     <Compile Update="RecentUpdates.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="SignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
