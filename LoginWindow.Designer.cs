@@ -58,6 +58,7 @@
             button1.TabIndex = 1;
             button1.Text = "Log In";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // PasswordTxt
             // 
@@ -112,6 +113,7 @@
             signupLink.TabIndex = 6;
             signupLink.TabStop = true;
             signupLink.Text = "Don't have an account? Sign Up!";
+            signupLink.LinkClicked += signupLink_LinkClicked;
             // 
             // LoginWindow
             // 

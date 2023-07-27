@@ -52,5 +52,14 @@ namespace Group8Sytem
                 UserNameTxt.ForeColor = Color.LightGray;
             }
         }
+
+        private void signupLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            LoginWindow loginWin = new LoginWindow();
+            loginWin.ShowDialog();
+            this.Close();
+
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kape;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -52,6 +53,22 @@ namespace Group8Sytem
                 UserNameTxt.Text = "First Name";
                 UserNameTxt.ForeColor = Color.LightGray;
             }
+        }
+
+        private void signupLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            SignUp signupWin = new SignUp();
+            signupWin.ShowDialog();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 f1 = new Form1();
+            f1.ShowDialog();   
+            this.Close();   
         }
     }
 }

@@ -47,6 +47,7 @@
             signupLink.TabIndex = 13;
             signupLink.TabStop = true;
             signupLink.Text = "Already have an account? Log in!";
+            signupLink.LinkClicked += signupLink_LinkClicked;
             // 
             // label3
             // 
