@@ -1,26 +1,70 @@
-﻿using Kape;
+﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kape;
 
 namespace Group8Sytem
 {
     public partial class LoginWindow : Form
     {
+        // Your MySQL connection string. Replace with your database credentials.
+        private string connectionString = "server=localhost;user=root;password=;database=db_inventory_system;";
+
         public LoginWindow()
         {
             InitializeComponent();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string username = UserNameTxt.Text;
+            string password = PasswordTxt.Text;
+
+            if (AuthenticateUser(username, password))
+            {
+                // Set the logged-in user's information in the SessionManager
+                SessionManager.SetLoggedInUser(username);
+                // Successful login, open the main application form (Form1)
+                this.Hide();
+                Form1 f1 = new Form1();
+                f1.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password. Please try again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool AuthenticateUser(string username, string password)
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "SELECT COUNT(*) FROM users WHERE username = @username AND password = @password;";
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@username", username);
+                        command.Parameters.AddWithValue("@password", password);
+                        int count = Convert.ToInt32(command.ExecuteScalar());
+                        return count > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while connecting to the database: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
         private void username_Enter(object sender, EventArgs e)
         {
-            if (UserNameTxt.Text == "First Name")
+            if (UserNameTxt.Text == "Enter Your Username here")
             {
                 UserNameTxt.Text = "";
                 UserNameTxt.ForeColor = Color.Black;
@@ -32,7 +76,7 @@ namespace Group8Sytem
         {
             if (UserNameTxt.Text == "")
             {
-                UserNameTxt.Text = "First Name";
+                UserNameTxt.Text = "Enter Your Username here:";
                 UserNameTxt.ForeColor = Color.LightGray;
             }
         }
@@ -61,14 +105,6 @@ namespace Group8Sytem
             SignUp signupWin = new SignUp();
             signupWin.ShowDialog();
             this.Close();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form1 f1 = new Form1();
-            f1.ShowDialog();   
-            this.Close();   
         }
     }
 }

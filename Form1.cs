@@ -21,6 +21,9 @@ namespace Kape
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // Access the logged-in user's information from the SessionManager
+            string loggedInUser = SessionManager.LoggedInUsername;
+            MessageBox.Show($"Logged-in user: {loggedInUser}");
             recentUpdates1.Visible = true;
             inventory1.Visible = false;
         }
