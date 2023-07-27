@@ -29,171 +29,115 @@
         private void InitializeComponent()
         {
             button1 = new Button();
+            label1 = new Label();
             button2 = new Button();
             button3 = new Button();
-            label1 = new Label();
-            dataGridView1 = new DataGridView();
-            ID = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            label3 = new Label();
-            textBox3 = new TextBox();
-            label4 = new Label();
-            textBox4 = new TextBox();
-            label5 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            button4 = new Button();
+            recentUpdates1 = new Group8Sytem.RecentUpdates();
+            panel1 = new Panel();
+            inventory1 = new Group8Sytem.Inventory();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(12, 296);
+            button1.Location = new Point(12, 89);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(128, 63);
             button1.TabIndex = 0;
-            button1.Text = "ADD";
+            button1.Text = "RECENT UPDATES";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(94, 296);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 1;
-            button2.Text = "DELETE";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(175, 296);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 2;
-            button3.Text = "UPDATE";
-            button3.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(256, 31);
+            label1.BackColor = SystemColors.ActiveCaption;
+            label1.Font = new Font("Stencil", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(233, 22);
             label1.Name = "label1";
-            label1.Size = new Size(459, 37);
+            label1.Size = new Size(482, 32);
             label1.TabIndex = 3;
             label1.Text = "SOMETHING MANAGEMENT SYSTEM";
             // 
-            // dataGridView1
+            // button2
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(256, 102);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(532, 273);
-            dataGridView1.TabIndex = 4;
+            button2.Location = new Point(12, 227);
+            button2.Name = "button2";
+            button2.Size = new Size(128, 63);
+            button2.TabIndex = 5;
+            button2.Text = "EMPLOYEES";
+            button2.UseVisualStyleBackColor = true;
             // 
-            // ID
+            // button3
             // 
-            ID.AutoSize = true;
-            ID.Location = new Point(12, 49);
-            ID.Name = "ID";
-            ID.Size = new Size(18, 15);
-            ID.TabIndex = 5;
-            ID.Text = "ID";
+            button3.Location = new Point(12, 158);
+            button3.Name = "button3";
+            button3.Size = new Size(128, 63);
+            button3.TabIndex = 6;
+            button3.Text = "INVENTORY";
+            button3.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // button4
             // 
-            textBox1.Location = new Point(12, 67);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 7;
+            button4.Location = new Point(12, 296);
+            button4.Name = "button4";
+            button4.Size = new Size(128, 63);
+            button4.TabIndex = 7;
+            button4.Text = "ISA PA?";
+            button4.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // recentUpdates1
             // 
-            textBox2.Location = new Point(12, 122);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 9;
+            recentUpdates1.Location = new Point(171, 78);
+            recentUpdates1.Name = "recentUpdates1";
+            recentUpdates1.Size = new Size(348, 360);
+            recentUpdates1.TabIndex = 8;
             // 
-            // label3
+            // panel1
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(12, 104);
-            label3.Name = "label3";
-            label3.Size = new Size(41, 15);
-            label3.TabIndex = 8;
-            label3.Text = "NAME";
+            panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(1, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(916, 72);
+            panel1.TabIndex = 9;
             // 
-            // textBox3
+            // inventory1
             // 
-            textBox3.Location = new Point(12, 178);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 11;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(12, 160);
-            label4.Name = "label4";
-            label4.Size = new Size(42, 15);
-            label4.TabIndex = 10;
-            label4.Text = "STOCK";
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(12, 229);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 13;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(12, 211);
-            label5.Name = "label5";
-            label5.Size = new Size(97, 15);
-            label5.TabIndex = 12;
-            label5.Text = "ISA PANG DETAIL";
+            inventory1.Location = new Point(171, 89);
+            inventory1.Name = "inventory1";
+            inventory1.Size = new Size(706, 412);
+            inventory1.TabIndex = 10;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(textBox4);
-            Controls.Add(label5);
-            Controls.Add(textBox3);
-            Controls.Add(label4);
-            Controls.Add(textBox2);
-            Controls.Add(label3);
-            Controls.Add(textBox1);
-            Controls.Add(ID);
-            Controls.Add(dataGridView1);
-            Controls.Add(label1);
+            ClientSize = new Size(911, 520);
+            Controls.Add(inventory1);
+            Controls.Add(recentUpdates1);
+            Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
+            Controls.Add(panel1);
             Name = "Form1";
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private Button button1;
+        private Label label1;
         private Button button2;
         private Button button3;
-        private Label label1;
-        private DataGridView dataGridView1;
-        private Label ID;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private Label label3;
-        private TextBox textBox3;
-        private Label label4;
-        private TextBox textBox4;
-        private Label label5;
+        private Button button4;
+        private Group8Sytem.RecentUpdates recentUpdates1;
+        private Panel panel1;
+        private Group8Sytem.Inventory inventory1;
     }
 }
