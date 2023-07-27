@@ -29,4 +29,3 @@ C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfAp
 C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfApp\Kape\KapeSystem\obj\Debug\net7.0-windows\Group8Sytem.pdb
 C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfApp\Kape\KapeSystem\obj\Debug\net7.0-windows\Group8Sytem.genruntimeconfig.cache
 C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfApp\Kape\KapeSystem\obj\Debug\net7.0-windows\ref\Group8Sytem.dll
-C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfApp\Kape\KapeSystem\obj\Debug\net7.0-windows\Group8System.Form1.resources
