@@ -46,7 +46,9 @@
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
-         //   SuspendLayout();
+            btnSave = new Button();
+            ((System.ComponentModel.ISupportInitialize)dataGridInventory).BeginInit();
+            SuspendLayout();
             // 
             // label1
             // 
@@ -60,14 +62,13 @@
             // 
             // dataGridInventory
             // 
-            dataGridInventory = new DataGridView();
             dataGridInventory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridInventory.Location = new System.Drawing.Point(0, 53);
+            dataGridInventory.Location = new Point(0, 53);
             dataGridInventory.Margin = new Padding(3, 4, 3, 4);
             dataGridInventory.Name = "dataGridInventory";
             dataGridInventory.RowHeadersWidth = 51;
             dataGridInventory.RowTemplate.Height = 25;
-            dataGridInventory.Size = new System.Drawing.Size(397, 500);
+            dataGridInventory.Size = new Size(397, 500);
             dataGridInventory.TabIndex = 3;
             // 
             // label2
@@ -218,10 +219,22 @@
             button3.Text = "UPDATE";
             button3.UseVisualStyleBackColor = true;
             // 
+            // btnSave
+            // 
+            btnSave.Location = new Point(424, 504);
+            btnSave.Margin = new Padding(3, 4, 3, 4);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(86, 31);
+            btnSave.TabIndex = 20;
+            btnSave.Text = "SAVE";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSaveClick;
+            // 
             // Inventory
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btnSave);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -243,6 +256,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "Inventory";
             Size = new Size(807, 549);
+            ((System.ComponentModel.ISupportInitialize)dataGridInventory).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -267,5 +281,6 @@
         private Button button1;
         private Button button2;
         private Button button3;
+        private Button btnSave;
     }
 }

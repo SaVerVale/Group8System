@@ -35,7 +35,7 @@ namespace Kape
         {
             if (connection.State == ConnectionState.Open)
                 connection.Close();
-        }s
+        }
         public DataTable GetComputerPartsData()
         {
             DataTable dataTable = new DataTable();
@@ -61,6 +61,33 @@ namespace Kape
             }
 
             return dataTable;
+        }
+
+        public void UpdateComputerPartsData(DataTable updatedDataTable)
+        {
+            try
+            {
+                OpenConnection();
+
+                // Use MySqlDataAdapter.Update to save the changes back to the database
+                MySqlCommandBuilder builder = new MySqlCommandBuilder();
+                builder.DataAdapter = new MySqlDataAdapter("SELECT ID, Name, Count, Category, Manufacturer, Specifications, Price FROM computer_parts", GetConnection());
+
+                // Set the UpdateCommand to handle the update operation
+                builder.GetUpdateCommand();
+
+                // Apply the changes to the database
+                builder.DataAdapter.Update(updatedDataTable);
+            }
+            catch (Exception ex)
+            {
+                // Handle the exception appropriately, e.g., show an error message.
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                CloseConnection();
+            }
         }
     }
 }
