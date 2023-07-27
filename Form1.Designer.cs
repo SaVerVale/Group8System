@@ -77,6 +77,7 @@
             button3.TabIndex = 6;
             button3.Text = "INVENTORY";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
@@ -89,7 +90,7 @@
             // 
             // recentUpdates1
             // 
-            recentUpdates1.Location = new Point(171, 78);
+            recentUpdates1.Location = new Point(171, 89);
             recentUpdates1.Name = "recentUpdates1";
             recentUpdates1.Size = new Size(348, 360);
             recentUpdates1.TabIndex = 8;
@@ -115,15 +116,16 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(911, 520);
-            Controls.Add(inventory1);
             Controls.Add(recentUpdates1);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(panel1);
+            Controls.Add(inventory1);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
