@@ -1,0 +1,17 @@
+C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfApp\Kape\KapeSystem\bin\Debug\net7.0-windows\Kape.exe
+C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfApp\Kape\KapeSystem\bin\Debug\net7.0-windows\Kape.deps.json
+C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfApp\Kape\KapeSystem\bin\Debug\net7.0-windows\Kape.runtimeconfig.json
+C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfApp\Kape\KapeSystem\bin\Debug\net7.0-windows\Kape.dll
+C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfApp\Kape\KapeSystem\bin\Debug\net7.0-windows\Kape.pdb
+C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfApp\Kape\KapeSystem\obj\Debug\net7.0-windows\Kape.csproj.AssemblyReference.cache
+C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfApp\Kape\KapeSystem\obj\Debug\net7.0-windows\Kape.Form1.resources
+C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfApp\Kape\KapeSystem\obj\Debug\net7.0-windows\Kape.csproj.GenerateResource.cache
+C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfApp\Kape\KapeSystem\obj\Debug\net7.0-windows\Kape.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfApp\Kape\KapeSystem\obj\Debug\net7.0-windows\Kape.AssemblyInfoInputs.cache
+C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfApp\Kape\KapeSystem\obj\Debug\net7.0-windows\Kape.AssemblyInfo.cs
+C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfApp\Kape\KapeSystem\obj\Debug\net7.0-windows\Kape.csproj.CoreCompileInputs.cache
+C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfApp\Kape\KapeSystem\obj\Debug\net7.0-windows\Kape.dll
+C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfApp\Kape\KapeSystem\obj\Debug\net7.0-windows\refint\Kape.dll
+C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfApp\Kape\KapeSystem\obj\Debug\net7.0-windows\Kape.pdb
+C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfApp\Kape\KapeSystem\obj\Debug\net7.0-windows\Kape.genruntimeconfig.cache
+C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfApp\Kape\KapeSystem\obj\Debug\net7.0-windows\ref\Kape.dll
