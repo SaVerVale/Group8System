@@ -64,3 +64,5 @@ C:\Users\Vinn\DesktopApp\Group8System\obj\Debug\net7.0-windows\ref\Group8Sytem.d
 C:\Users\Vinn\DesktopApp\Group8System\obj\Debug\net7.0-windows\Group8Sytem.Inventory.resources
 C:\Users\Vinn\DesktopApp\Group8System\obj\Debug\net7.0-windows\Group8Sytem.History.resources
 C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfApp\Kape\KapeSystem\obj\Debug\net7.0-windows\Group8Sytem.History.resources
+C:\Users\Vinn\DesktopApp\Group8System\obj\Debug\net7.0-windows\Group8Sytem.LoginWindow.resources
+C:\Users\Vinn\DesktopApp\Group8System\obj\Debug\net7.0-windows\Group8Sytem.SignUp.resources

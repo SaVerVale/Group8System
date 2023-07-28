@@ -48,8 +48,8 @@
             btnUpdate = new Button();
             btnSave = new Button();
             btnCancel = new Button();
-            btnSearch = new Button();
-            textBox1 = new TextBox();
+            btnShow = new Button();
+            txtSearch = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridInventory).BeginInit();
             SuspendLayout();
             // 
@@ -59,7 +59,7 @@
             label1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(158, 37);
+            label1.Size = new Size(197, 46);
             label1.TabIndex = 2;
             label1.Text = "INVENTORY";
             // 
@@ -69,12 +69,13 @@
             dataGridInventory.AllowUserToDeleteRows = false;
             dataGridInventory.BackgroundColor = SystemColors.Control;
             dataGridInventory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridInventory.Location = new Point(0, 40);
+            dataGridInventory.Location = new Point(0, 53);
+            dataGridInventory.Margin = new Padding(3, 4, 3, 4);
             dataGridInventory.Name = "dataGridInventory";
             dataGridInventory.ReadOnly = true;
             dataGridInventory.RowHeadersWidth = 51;
             dataGridInventory.RowTemplate.Height = 25;
-            dataGridInventory.Size = new Size(946, 375);
+            dataGridInventory.Size = new Size(1098, 566);
             dataGridInventory.TabIndex = 3;
             dataGridInventory.CellClick += dataGridInventoryClick;
             // 
@@ -82,26 +83,27 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Arial Narrow", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(951, 40);
+            label2.Location = new Point(1218, 53);
             label2.Name = "label2";
-            label2.Size = new Size(136, 31);
+            label2.Size = new Size(171, 40);
             label2.TabIndex = 4;
             label2.Text = "ADD ITEMS";
             // 
             // txtName
             // 
-            txtName.Location = new Point(1066, 105);
+            txtName.Location = new Point(1274, 141);
+            txtName.Margin = new Padding(3, 4, 3, 4);
             txtName.Name = "txtName";
-            txtName.Size = new Size(196, 23);
+            txtName.Size = new Size(223, 27);
             txtName.TabIndex = 5;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(951, 108);
+            label3.Location = new Point(1139, 144);
             label3.Name = "label3";
-            label3.Size = new Size(44, 20);
+            label3.Size = new Size(55, 24);
             label3.TabIndex = 6;
             label3.Text = "Name";
             // 
@@ -109,92 +111,98 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(952, 272);
+            label4.Location = new Point(1139, 363);
             label4.Name = "label4";
-            label4.Size = new Size(56, 20);
+            label4.Size = new Size(72, 24);
             label4.TabIndex = 8;
             label4.Text = "Quantity";
             // 
             // txtCategory
             // 
-            txtCategory.Location = new Point(1066, 144);
+            txtCategory.Location = new Point(1274, 192);
+            txtCategory.Margin = new Padding(3, 4, 3, 4);
             txtCategory.Name = "txtCategory";
-            txtCategory.Size = new Size(196, 23);
+            txtCategory.Size = new Size(223, 27);
             txtCategory.TabIndex = 7;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(951, 144);
+            label5.Location = new Point(1139, 192);
             label5.Name = "label5";
-            label5.Size = new Size(63, 20);
+            label5.Size = new Size(77, 24);
             label5.TabIndex = 10;
             label5.Text = "Category";
             // 
             // txtManufacturer
             // 
-            txtManufacturer.Location = new Point(1066, 188);
+            txtManufacturer.Location = new Point(1274, 250);
+            txtManufacturer.Margin = new Padding(3, 4, 3, 4);
             txtManufacturer.Name = "txtManufacturer";
-            txtManufacturer.Size = new Size(196, 23);
+            txtManufacturer.Size = new Size(223, 27);
             txtManufacturer.TabIndex = 9;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(951, 190);
+            label6.Location = new Point(1139, 250);
             label6.Name = "label6";
-            label6.Size = new Size(84, 20);
+            label6.Size = new Size(107, 24);
             label6.TabIndex = 12;
             label6.Text = "Manufacturer";
             // 
             // txtSpecifications
             // 
-            txtSpecifications.Location = new Point(1066, 230);
+            txtSpecifications.Location = new Point(1274, 306);
+            txtSpecifications.Margin = new Padding(3, 4, 3, 4);
             txtSpecifications.Name = "txtSpecifications";
-            txtSpecifications.Size = new Size(196, 23);
+            txtSpecifications.Size = new Size(223, 27);
             txtSpecifications.TabIndex = 11;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(949, 232);
+            label7.Location = new Point(1137, 309);
             label7.Name = "label7";
-            label7.Size = new Size(92, 20);
+            label7.Size = new Size(109, 24);
             label7.TabIndex = 14;
             label7.Text = "Specifications";
             // 
             // txtQuantity
             // 
-            txtQuantity.Location = new Point(1066, 269);
+            txtQuantity.Location = new Point(1274, 360);
+            txtQuantity.Margin = new Padding(3, 4, 3, 4);
             txtQuantity.Name = "txtQuantity";
-            txtQuantity.Size = new Size(196, 23);
+            txtQuantity.Size = new Size(223, 27);
             txtQuantity.TabIndex = 13;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(951, 313);
+            label8.Location = new Point(1139, 417);
             label8.Name = "label8";
-            label8.Size = new Size(40, 20);
+            label8.Size = new Size(46, 24);
             label8.TabIndex = 16;
             label8.Text = "Price";
             // 
             // txtPrice
             // 
-            txtPrice.Location = new Point(1066, 310);
+            txtPrice.Location = new Point(1274, 414);
+            txtPrice.Margin = new Padding(3, 4, 3, 4);
             txtPrice.Name = "txtPrice";
-            txtPrice.Size = new Size(196, 23);
+            txtPrice.Size = new Size(223, 27);
             txtPrice.TabIndex = 15;
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(1034, 349);
+            btnAdd.Location = new Point(1182, 465);
+            btnAdd.Margin = new Padding(3, 4, 3, 4);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(75, 23);
+            btnAdd.Size = new Size(86, 31);
             btnAdd.TabIndex = 17;
             btnAdd.Text = "ADD";
             btnAdd.UseVisualStyleBackColor = true;
@@ -202,9 +210,10 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(1115, 349);
+            btnDelete.Location = new Point(1411, 465);
+            btnDelete.Margin = new Padding(3, 4, 3, 4);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(75, 23);
+            btnDelete.Size = new Size(86, 31);
             btnDelete.TabIndex = 18;
             btnDelete.Text = "DELETE";
             btnDelete.UseVisualStyleBackColor = true;
@@ -212,9 +221,10 @@
             // 
             // btnUpdate
             // 
-            btnUpdate.Location = new Point(1196, 349);
+            btnUpdate.Location = new Point(1303, 465);
+            btnUpdate.Margin = new Padding(3, 4, 3, 4);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(75, 23);
+            btnUpdate.Size = new Size(86, 31);
             btnUpdate.TabIndex = 19;
             btnUpdate.Text = "UPDATE";
             btnUpdate.UseVisualStyleBackColor = true;
@@ -222,9 +232,10 @@
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(757, 421);
+            btnSave.Location = new Point(912, 627);
+            btnSave.Margin = new Padding(3, 4, 3, 4);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(75, 23);
+            btnSave.Size = new Size(86, 31);
             btnSave.TabIndex = 20;
             btnSave.Text = "SAVE";
             btnSave.UseVisualStyleBackColor = true;
@@ -232,38 +243,39 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(860, 421);
+            btnCancel.Location = new Point(1012, 627);
+            btnCancel.Margin = new Padding(3, 4, 3, 4);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(75, 23);
+            btnCancel.Size = new Size(86, 31);
             btnCancel.TabIndex = 21;
             btnCancel.Text = "CANCEL";
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancelClick;
             // 
-            // btnSearch
+            // btnShow
             // 
-            btnSearch.Location = new Point(865, 15);
-            btnSearch.Margin = new Padding(3, 2, 3, 2);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(81, 20);
-            btnSearch.TabIndex = 23;
-            btnSearch.Text = "SEARCH";
-            btnSearch.UseVisualStyleBackColor = true;
+            btnShow.Location = new Point(1005, 20);
+            btnShow.Name = "btnShow";
+            btnShow.Size = new Size(93, 27);
+            btnShow.TabIndex = 23;
+            btnShow.Text = "SHOW ALL";
+            btnShow.UseVisualStyleBackColor = true;
+            btnShow.Click += btnShowAllClick;
             // 
-            // textBox1
+            // txtSearch
             // 
-            textBox1.Location = new Point(744, 15);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(117, 23);
-            textBox1.TabIndex = 22;
+            txtSearch.Location = new Point(865, 20);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(133, 27);
+            txtSearch.TabIndex = 22;
+            txtSearch.TextChanged += txtSearchTextChanged;
             // 
             // Inventory
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(btnSearch);
-            Controls.Add(textBox1);
+            Controls.Add(btnShow);
+            Controls.Add(txtSearch);
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
             Controls.Add(btnUpdate);
@@ -284,8 +296,9 @@
             Controls.Add(label2);
             Controls.Add(dataGridInventory);
             Controls.Add(label1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Inventory";
-            Size = new Size(1296, 447);
+            Size = new Size(1520, 696);
             ((System.ComponentModel.ISupportInitialize)dataGridInventory).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -313,7 +326,7 @@
         private Button btnUpdate;
         private Button btnSave;
         private Button btnCancel;
-        private Button btnSearch;
-        private TextBox textBox1;
+        private Button btnShow;
+        private TextBox txtSearch;
     }
 }

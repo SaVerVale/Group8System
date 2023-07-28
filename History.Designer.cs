@@ -34,8 +34,8 @@ namespace Group8Sytem
         {
             dataGridViewHistory = new DataGridView();
             label1 = new Label();
-            textBox1 = new TextBox();
-            btnSearch = new Button();
+            txtSearch = new TextBox();
+            btnShow = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewHistory).BeginInit();
             SuspendLayout();
             // 
@@ -43,11 +43,12 @@ namespace Group8Sytem
             // 
             dataGridViewHistory.BackgroundColor = SystemColors.Control;
             dataGridViewHistory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewHistory.Location = new Point(3, 40);
+            dataGridViewHistory.Location = new Point(3, 53);
+            dataGridViewHistory.Margin = new Padding(3, 4, 3, 4);
             dataGridViewHistory.Name = "dataGridViewHistory";
             dataGridViewHistory.RowHeadersWidth = 51;
             dataGridViewHistory.RowTemplate.Height = 25;
-            dataGridViewHistory.Size = new Size(831, 367);
+            dataGridViewHistory.Size = new Size(1095, 489);
             dataGridViewHistory.TabIndex = 0;
             // 
             // label1
@@ -56,38 +57,39 @@ namespace Group8Sytem
             label1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(228, 37);
+            label1.Size = new Size(151, 46);
             label1.TabIndex = 1;
-            label1.Text = "RECENT UPDATES";
+            label1.Text = "HISTORY";
             // 
-            // textBox1
+            // txtSearch
             // 
-            textBox1.Location = new Point(628, 15);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(117, 23);
-            textBox1.TabIndex = 2;
+            txtSearch.Location = new Point(865, 20);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(133, 27);
+            txtSearch.TabIndex = 2;
+            txtSearch.TextChanged += txtSearchTextChanged;
             // 
-            // btnSearch
+            // btnShow
             // 
-            btnSearch.Location = new Point(749, 15);
-            btnSearch.Margin = new Padding(3, 2, 3, 2);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(81, 20);
-            btnSearch.TabIndex = 3;
-            btnSearch.Text = "SEARCH";
-            btnSearch.UseVisualStyleBackColor = true;
+            btnShow.Location = new Point(1005, 20);
+            btnShow.Name = "btnShow";
+            btnShow.Size = new Size(93, 27);
+            btnShow.TabIndex = 3;
+            btnShow.Text = "SHOW ALL";
+            btnShow.UseVisualStyleBackColor = true;
+            btnShow.Click += btnShowAllClick;
             // 
             // History
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(btnSearch);
-            Controls.Add(textBox1);
+            Controls.Add(btnShow);
+            Controls.Add(txtSearch);
             Controls.Add(label1);
             Controls.Add(dataGridViewHistory);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "History";
-            Size = new Size(845, 464);
+            Size = new Size(1138, 619);
             ((System.ComponentModel.ISupportInitialize)dataGridViewHistory).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -97,8 +99,8 @@ namespace Group8Sytem
 
         public DataGridView dataGridViewHistory;
         private Label label1;
-        private TextBox textBox1;
-        private Button btnSearch;
+        private TextBox txtSearch;
+        private Button btnShow;
 
         // This method is used to populate the DataGridView with data (Replace this with your actual data)
     }
