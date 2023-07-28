@@ -15,18 +15,18 @@ namespace Kape
 {
     public partial class Form1 : Form
     {
-        
+
 
         public Form1()
         {
-            string username = "user123"; 
+            string username = "user123";
             GlobalData.LoggedInUsername = username;
             InitializeComponent();
         }
 
         // You can now access the dataGridInventory control through the Inventory control
         // For example, you can access its properties or modify its behavior like this:
-     
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -36,8 +36,8 @@ namespace Kape
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            recentUpdates1.Visible = true;
-            inventory1.Visible = false;
+            recentUpdates1.Visible = false;
+            inventory1.Visible = true;
         }
 
         private void button3_Click(object sender, EventArgs e)

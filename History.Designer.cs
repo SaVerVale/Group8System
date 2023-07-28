@@ -34,16 +34,21 @@ namespace Group8Sytem
         {
             dataGridViewHistory = new DataGridView();
             label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)(dataGridViewHistory)).BeginInit();
+            textBox1 = new TextBox();
+            btnSearch = new Button();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewHistory).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewHistory
             // 
+            dataGridViewHistory.BackgroundColor = SystemColors.Control;
             dataGridViewHistory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewHistory.Location = new Point(0, 46);
-            dataGridViewHistory.Name = "dataGridView1";
+            dataGridViewHistory.Location = new Point(0, 100);
+            dataGridViewHistory.Margin = new Padding(3, 4, 3, 4);
+            dataGridViewHistory.Name = "dataGridViewHistory";
+            dataGridViewHistory.RowHeadersWidth = 51;
             dataGridViewHistory.RowTemplate.Height = 25;
-            dataGridViewHistory.Size = new Size(347, 367);
+            dataGridViewHistory.Size = new Size(610, 489);
             dataGridViewHistory.TabIndex = 0;
             // 
             // label1
@@ -52,19 +57,38 @@ namespace Group8Sytem
             label1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(228, 37);
+            label1.Size = new Size(285, 46);
             label1.TabIndex = 1;
             label1.Text = "RECENT UPDATES";
             // 
-            // RecentUpdates
+            // textBox1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            textBox1.Location = new Point(3, 66);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(133, 27);
+            textBox1.TabIndex = 2;
+            // 
+            // btnSearch
+            // 
+            btnSearch.Location = new Point(142, 66);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(93, 27);
+            btnSearch.TabIndex = 3;
+            btnSearch.Text = "SEARCH";
+            btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // History
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btnSearch);
+            Controls.Add(textBox1);
             Controls.Add(label1);
             Controls.Add(dataGridViewHistory);
-            Name = "RecentUpdates";
-            Size = new Size(348, 413);
-            ((System.ComponentModel.ISupportInitialize)(dataGridViewHistory)).EndInit();
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "History";
+            Size = new Size(698, 619);
+            ((System.ComponentModel.ISupportInitialize)dataGridViewHistory).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -73,6 +97,8 @@ namespace Group8Sytem
 
         public DataGridView dataGridViewHistory;
         private Label label1;
+        private TextBox textBox1;
+        private Button btnSearch;
 
         // This method is used to populate the DataGridView with data (Replace this with your actual data)
     }
