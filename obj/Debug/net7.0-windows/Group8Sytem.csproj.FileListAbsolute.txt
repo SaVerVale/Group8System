@@ -29,7 +29,6 @@ C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfAp
 C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfApp\Kape\KapeSystem\obj\Debug\net7.0-windows\Group8Sytem.pdb
 C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfApp\Kape\KapeSystem\obj\Debug\net7.0-windows\Group8Sytem.genruntimeconfig.cache
 C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfApp\Kape\KapeSystem\obj\Debug\net7.0-windows\ref\Group8Sytem.dll
-C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfApp\Kape\KapeSystem\obj\Debug\net7.0-windows\Group8Sytem.RecentUpdates.resources
 C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfApp\Kape\KapeSystem\obj\Debug\net7.0-windows\Group8Sytem.Inventory.resources
 C:\Users\Vinn\DesktopApp\Group8System\obj\Debug\net7.0-windows\Group8Sytem.dll
 C:\Users\Vinn\DesktopApp\Group8System\obj\Debug\net7.0-windows\refint\Group8Sytem.dll
@@ -64,3 +63,4 @@ C:\Users\Vinn\DesktopApp\Group8System\obj\Debug\net7.0-windows\Group8Sytem.genru
 C:\Users\Vinn\DesktopApp\Group8System\obj\Debug\net7.0-windows\ref\Group8Sytem.dll
 C:\Users\Vinn\DesktopApp\Group8System\obj\Debug\net7.0-windows\Group8Sytem.Inventory.resources
 C:\Users\Vinn\DesktopApp\Group8System\obj\Debug\net7.0-windows\Group8Sytem.History.resources
+C:\Users\Samuel\Desktop\Personal Education\Programming\C#\Trash\New folder\WpfApp\Kape\KapeSystem\obj\Debug\net7.0-windows\Group8Sytem.History.resources

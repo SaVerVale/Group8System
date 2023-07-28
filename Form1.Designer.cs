@@ -27,53 +27,53 @@ namespace Kape
             label1.AutoSize = true;
             label1.BackColor = SystemColors.ActiveCaption;
             label1.Font = new Font("Stencil", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(266, 29);
+            label1.Location = new Point(233, 22);
             label1.Name = "label1";
-            label1.Size = new Size(601, 40);
+            label1.Size = new Size(482, 32);
             label1.TabIndex = 3;
             label1.Text = "SOMETHING MANAGEMENT SYSTEM";
             // 
-            // label2
+            // history
             // 
-            history.Location = new Point(14, 211);
-            history.Margin = new Padding(3, 4, 3, 4);
-            history.Name = "label2";
-            history.Size = new Size(146, 84);
+            history.BackColor = Color.LightGray;
+            history.Location = new Point(12, 158);
+            history.Margin = new Padding(3);
+            history.Name = "history";
+            history.Size = new Size(128, 63);
             history.TabIndex = 0;
             history.Text = "HISTORY";
             history.TextAlign = ContentAlignment.MiddleCenter;
-            history.BackColor = Color.LightGray;
-            history.Click += button1_Click; // You can keep the same event handler for the label
+            history.Click += button1_Click;
             // 
             // label3
             // 
-            label3.Location = new Point(14, 303);
-            label3.Margin = new Padding(3, 4, 3, 4);
+            label3.BackColor = Color.LightGray;
+            label3.Location = new Point(12, 227);
+            label3.Margin = new Padding(3);
             label3.Name = "label3";
-            label3.Size = new Size(146, 84);
+            label3.Size = new Size(128, 63);
             label3.TabIndex = 5;
             label3.Text = "EMPLOYEES";
             label3.TextAlign = ContentAlignment.MiddleCenter;
-            label3.BackColor = Color.LightGray;
             // 
-            // label4
+            // inventory
             // 
-            inventory.Location = new Point(12, 119);
-            inventory.Margin = new Padding(3, 4, 3, 4);
-            inventory.Name = "label4";
-            inventory.Size = new Size(146, 84);
+            inventory.BackColor = Color.LightGray;
+            inventory.Location = new Point(10, 89);
+            inventory.Margin = new Padding(3);
+            inventory.Name = "inventory";
+            inventory.Size = new Size(128, 63);
             inventory.TabIndex = 6;
             inventory.Text = "INVENTORY";
             inventory.TextAlign = ContentAlignment.MiddleCenter;
-            inventory.BackColor = Color.LightGray;
-            inventory.Click += button3_Click; // You can keep the same event handler for the label
+            inventory.Click += button3_Click;
             // 
             // recentUpdates1
             // 
-            recentUpdates1.Location = new Point(195, 119);
-            recentUpdates1.Margin = new Padding(3, 5, 3, 5);
+            recentUpdates1.Location = new Point(171, 89);
+            recentUpdates1.Margin = new Padding(3, 4, 3, 4);
             recentUpdates1.Name = "recentUpdates1";
-            recentUpdates1.Size = new Size(398, 480);
+            recentUpdates1.Size = new Size(1199, 415);
             recentUpdates1.TabIndex = 8;
             // 
             // panel1
@@ -81,31 +81,29 @@ namespace Kape
             panel1.BackColor = SystemColors.ActiveCaption;
             panel1.Controls.Add(label1);
             panel1.Location = new Point(1, 0);
-            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1047, 96);
+            panel1.Size = new Size(1369, 72);
             panel1.TabIndex = 9;
             // 
             // inventory1
             // 
-            inventory1.Location = new Point(195, 119);
-            inventory1.Margin = new Padding(3, 5, 3, 5);
+            inventory1.Location = new Point(171, 89);
+            inventory1.Margin = new Padding(3, 4, 3, 4);
             inventory1.Name = "inventory1";
-            inventory1.Size = new Size(807, 549);
+            inventory1.Size = new Size(1199, 456);
             inventory1.TabIndex = 10;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1041, 693);
+            ClientSize = new Size(1370, 546);
             Controls.Add(recentUpdates1);
             Controls.Add(inventory);
             Controls.Add(label3);
             Controls.Add(history);
             Controls.Add(panel1);
             Controls.Add(inventory1);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;

@@ -43,12 +43,11 @@ namespace Group8Sytem
             // 
             dataGridViewHistory.BackgroundColor = SystemColors.Control;
             dataGridViewHistory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewHistory.Location = new Point(0, 100);
-            dataGridViewHistory.Margin = new Padding(3, 4, 3, 4);
+            dataGridViewHistory.Location = new Point(3, 40);
             dataGridViewHistory.Name = "dataGridViewHistory";
             dataGridViewHistory.RowHeadersWidth = 51;
             dataGridViewHistory.RowTemplate.Height = 25;
-            dataGridViewHistory.Size = new Size(610, 489);
+            dataGridViewHistory.Size = new Size(831, 367);
             dataGridViewHistory.TabIndex = 0;
             // 
             // label1
@@ -57,37 +56,38 @@ namespace Group8Sytem
             label1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(285, 46);
+            label1.Size = new Size(228, 37);
             label1.TabIndex = 1;
             label1.Text = "RECENT UPDATES";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(3, 66);
+            textBox1.Location = new Point(628, 15);
+            textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(133, 27);
+            textBox1.Size = new Size(117, 23);
             textBox1.TabIndex = 2;
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(142, 66);
+            btnSearch.Location = new Point(749, 15);
+            btnSearch.Margin = new Padding(3, 2, 3, 2);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(93, 27);
+            btnSearch.Size = new Size(81, 20);
             btnSearch.TabIndex = 3;
             btnSearch.Text = "SEARCH";
             btnSearch.UseVisualStyleBackColor = true;
             // 
             // History
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(btnSearch);
             Controls.Add(textBox1);
             Controls.Add(label1);
             Controls.Add(dataGridViewHistory);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "History";
-            Size = new Size(698, 619);
+            Size = new Size(845, 464);
             ((System.ComponentModel.ISupportInitialize)dataGridViewHistory).EndInit();
             ResumeLayout(false);
             PerformLayout();

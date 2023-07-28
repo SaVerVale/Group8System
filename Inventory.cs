@@ -343,7 +343,7 @@ namespace Group8Sytem
                 {
                     // Get the ID of the selected row to delete from the database
                     int id = int.Parse(dataGridInventory.Rows[rowIndex].Cells["ID"].Value.ToString());
-                        
+
                     // Delete the corresponding record from the database
                     DbConnect dbConnector = new DbConnect();
                     dbConnector.DeleteComputerPart(id, GlobalData.LoggedInUsername);
