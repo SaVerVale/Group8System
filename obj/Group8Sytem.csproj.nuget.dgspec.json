@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vinn\\DesktopApp\\Group8System\\Group8Sytem.csproj": {}
+    "C:\\Users\\MaryJudithGywnneVale\\OneDrive - DepEd-NCR\\Desktop\\Samuel Programming\\Group8System\\Group8Sytem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vinn\\DesktopApp\\Group8System\\Group8Sytem.csproj": {
+    "C:\\Users\\MaryJudithGywnneVale\\OneDrive - DepEd-NCR\\Desktop\\Samuel Programming\\Group8System\\Group8Sytem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vinn\\DesktopApp\\Group8System\\Group8Sytem.csproj",
+        "projectUniqueName": "C:\\Users\\MaryJudithGywnneVale\\OneDrive - DepEd-NCR\\Desktop\\Samuel Programming\\Group8System\\Group8Sytem.csproj",
         "projectName": "Group8Sytem",
-        "projectPath": "C:\\Users\\Vinn\\DesktopApp\\Group8System\\Group8Sytem.csproj",
-        "packagesPath": "C:\\Users\\Vinn\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vinn\\DesktopApp\\Group8System\\obj\\",
+        "projectPath": "C:\\Users\\MaryJudithGywnneVale\\OneDrive - DepEd-NCR\\Desktop\\Samuel Programming\\Group8System\\Group8Sytem.csproj",
+        "packagesPath": "C:\\Users\\MaryJudithGywnneVale\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MaryJudithGywnneVale\\OneDrive - DepEd-NCR\\Desktop\\Samuel Programming\\Group8System\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Vinn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\MaryJudithGywnneVale\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

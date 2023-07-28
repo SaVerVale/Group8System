@@ -41,9 +41,10 @@
             // 
             signupLink.AccessibleName = "signupLink";
             signupLink.AutoSize = true;
-            signupLink.Location = new Point(386, 485);
+            signupLink.Location = new Point(482, 606);
+            signupLink.Margin = new Padding(4, 0, 4, 0);
             signupLink.Name = "signupLink";
-            signupLink.Size = new Size(0, 20);
+            signupLink.Size = new Size(0, 25);
             signupLink.TabIndex = 13;
             signupLink.TabStop = true;
             // 
@@ -52,9 +53,10 @@
             label3.AccessibleName = "passwordLabel";
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(256, 307);
+            label3.Location = new Point(320, 384);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(101, 28);
+            label3.Size = new Size(122, 32);
             label3.TabIndex = 12;
             label3.Text = "Password";
             // 
@@ -63,19 +65,20 @@
             label2.AccessibleName = "userLabel";
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(256, 235);
+            label2.Location = new Point(320, 294);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(110, 28);
+            label2.Size = new Size(132, 32);
             label2.TabIndex = 11;
             label2.Text = "UserName";
             // 
             // UserNameTxt
             // 
             UserNameTxt.AccessibleName = "UserNameTxt";
-            UserNameTxt.Location = new Point(366, 235);
-            UserNameTxt.Margin = new Padding(3, 4, 3, 4);
+            UserNameTxt.Location = new Point(458, 294);
+            UserNameTxt.Margin = new Padding(4, 5, 4, 5);
             UserNameTxt.Name = "UserNameTxt";
-            UserNameTxt.Size = new Size(351, 27);
+            UserNameTxt.Size = new Size(438, 31);
             UserNameTxt.TabIndex = 10;
             UserNameTxt.Enter += UserNameTxt_Enter;
             UserNameTxt.Leave += UserNameTxt_Leave;
@@ -83,10 +86,10 @@
             // PasswordTxt
             // 
             PasswordTxt.AccessibleName = "PasswordTxt";
-            PasswordTxt.Location = new Point(366, 304);
-            PasswordTxt.Margin = new Padding(3, 4, 3, 4);
+            PasswordTxt.Location = new Point(458, 380);
+            PasswordTxt.Margin = new Padding(4, 5, 4, 5);
             PasswordTxt.Name = "PasswordTxt";
-            PasswordTxt.Size = new Size(351, 27);
+            PasswordTxt.Size = new Size(438, 31);
             PasswordTxt.TabIndex = 9;
             PasswordTxt.UseSystemPasswordChar = true;
             PasswordTxt.Enter += PasswordTxt_Enter;
@@ -95,10 +98,10 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(261, 391);
-            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Location = new Point(326, 489);
+            button1.Margin = new Padding(4, 5, 4, 5);
             button1.Name = "button1";
-            button1.Size = new Size(457, 56);
+            button1.Size = new Size(571, 70);
             button1.TabIndex = 8;
             button1.Text = "Sign Up";
             button1.UseVisualStyleBackColor = true;
@@ -109,18 +112,19 @@
             label1.AccessibleName = "loginLabel";
             label1.AutoSize = true;
             label1.Font = new Font("Cooper Black", 48F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(326, 51);
+            label1.Location = new Point(408, 64);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(359, 91);
+            label1.Size = new Size(430, 110);
             label1.TabIndex = 7;
             label1.Text = "Sign Up";
             label1.TextAlign = ContentAlignment.TopCenter;
             // 
             // SignUp
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(1142, 750);
             Controls.Add(signupLink);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -128,8 +132,9 @@
             Controls.Add(PasswordTxt);
             Controls.Add(button1);
             Controls.Add(label1);
-            Margin = new Padding(3, 4, 3, 4);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "SignUp";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "SignUp";
             ResumeLayout(false);
             PerformLayout();

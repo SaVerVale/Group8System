@@ -21,7 +21,7 @@ namespace Kape
         {
             InitializeComponent();
 
-          //  recentUpdates1 = new History();
+            //  recentUpdates1 = new History();
             //inventory1 = new Inventory();
 
         }
@@ -59,6 +59,14 @@ namespace Kape
             {
                 inventory1.PopulateDataGrid();
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginWindow lw = new LoginWindow();
+            lw.ShowDialog();
+            this.Close();
         }
     }
 }

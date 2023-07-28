@@ -43,12 +43,12 @@ namespace Group8Sytem
             // 
             dataGridViewHistory.BackgroundColor = SystemColors.Control;
             dataGridViewHistory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewHistory.Location = new Point(3, 53);
-            dataGridViewHistory.Margin = new Padding(3, 4, 3, 4);
+            dataGridViewHistory.Location = new Point(4, 66);
+            dataGridViewHistory.Margin = new Padding(4, 5, 4, 5);
             dataGridViewHistory.Name = "dataGridViewHistory";
             dataGridViewHistory.RowHeadersWidth = 51;
             dataGridViewHistory.RowTemplate.Height = 25;
-            dataGridViewHistory.Size = new Size(1095, 489);
+            dataGridViewHistory.Size = new Size(1707, 611);
             dataGridViewHistory.TabIndex = 0;
             // 
             // label1
@@ -56,24 +56,27 @@ namespace Group8Sytem
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(0, 0);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(151, 46);
+            label1.Size = new Size(177, 54);
             label1.TabIndex = 1;
             label1.Text = "HISTORY";
             // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(865, 20);
+            txtSearch.Location = new Point(1415, 25);
+            txtSearch.Margin = new Padding(4, 4, 4, 4);
             txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(133, 27);
+            txtSearch.Size = new Size(165, 31);
             txtSearch.TabIndex = 2;
             txtSearch.TextChanged += txtSearchTextChanged;
             // 
             // btnShow
             // 
-            btnShow.Location = new Point(1005, 20);
+            btnShow.Location = new Point(1590, 25);
+            btnShow.Margin = new Padding(4, 4, 4, 4);
             btnShow.Name = "btnShow";
-            btnShow.Size = new Size(93, 27);
+            btnShow.Size = new Size(116, 34);
             btnShow.TabIndex = 3;
             btnShow.Text = "SHOW ALL";
             btnShow.UseVisualStyleBackColor = true;
@@ -81,15 +84,15 @@ namespace Group8Sytem
             // 
             // History
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(btnShow);
             Controls.Add(txtSearch);
             Controls.Add(label1);
             Controls.Add(dataGridViewHistory);
-            Margin = new Padding(3, 4, 3, 4);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "History";
-            Size = new Size(1138, 619);
+            Size = new Size(1715, 774);
             ((System.ComponentModel.ISupportInitialize)dataGridViewHistory).EndInit();
             ResumeLayout(false);
             PerformLayout();
