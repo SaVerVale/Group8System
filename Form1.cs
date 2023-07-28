@@ -19,6 +19,8 @@ namespace Kape
 
         public Form1()
         {
+            string username = "user123"; 
+            GlobalData.LoggedInUsername = username;
             InitializeComponent();
         }
 

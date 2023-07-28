@@ -123,12 +123,60 @@ namespace Group8Sytem
         {
             return dataGridInventory;
         }
+        /*
+                private void btnSaveClick(object sender, EventArgs e)
+                {
+                    try
+                    {
+                        // Create a DataTable to store the changes made in the DataGridView
+                        DataTable updatedDataTable = ((DataTable)dataGridInventory.DataSource).GetChanges();
+
+                        if (updatedDataTable != null)
+                        {
+                            // Filter out added rows from the updatedDataTable
+                            var modifiedRows = updatedDataTable.Rows.Cast<DataRow>()
+                                .Where(r => r.RowState != DataRowState.Added)
+                                .ToArray();
+
+                            if (modifiedRows.Any())
+                            {
+                                DbConnect dbConnector = new DbConnect();
+                                dbConnector.UpdateComputerPartsData(updatedDataTable);
+
+                                MessageBox.Show("Changes saved successfully!");
+
+                                // Update the modified rows directly in the originalDataTable
+                                foreach (DataRow modifiedRow in modifiedRows)
+                                {
+                                    DataRow originalRow = originalDataTable.Rows.Cast<DataRow>()
+                                        .FirstOrDefault(r => r["ID"].Equals(modifiedRow["ID"]));
+
+                                    if (originalRow != null)
+                                    {
+                                        originalRow.ItemArray = modifiedRow.ItemArray;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                // No changes were made, show a message to the user
+                                MessageBox.Show("No changes to save.");
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle the exception appropriately, e.g., show an error message.
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
+                }
+        */
 
         private void btnSaveClick(object sender, EventArgs e)
         {
             try
             {
-                // Create a DataTable to store the changes made in the DataGridView
+                // Get the updated DataTable with changes from the DataGridView
                 DataTable updatedDataTable = ((DataTable)dataGridInventory.DataSource).GetChanges();
 
                 if (updatedDataTable != null)
@@ -140,10 +188,9 @@ namespace Group8Sytem
 
                     if (modifiedRows.Any())
                     {
-                        DbConnect dbConnector = new DbConnect();
-                        dbConnector.UpdateComputerPartsData(updatedDataTable);
-
-                        MessageBox.Show("Changes saved successfully!");
+                        // Create a new DataTable to store the changes for history
+                        DataTable changesForHistory = updatedDataTable.Clone();
+                        changesForHistory.Clear();
 
                         // Update the modified rows directly in the originalDataTable
                         foreach (DataRow modifiedRow in modifiedRows)
@@ -154,8 +201,17 @@ namespace Group8Sytem
                             if (originalRow != null)
                             {
                                 originalRow.ItemArray = modifiedRow.ItemArray;
+
+                                // Add the modifiedRow to the changesForHistory DataTable
+                                changesForHistory.ImportRow(modifiedRow);
                             }
                         }
+
+                        // Update the database with the changes
+                        DbConnect dbConnector = new DbConnect();
+                        dbConnector.UpdateComputerPartsData(changesForHistory, GlobalData.LoggedInUsername);
+
+                        MessageBox.Show("Changes saved successfully!");
                     }
                     else
                     {
@@ -170,8 +226,6 @@ namespace Group8Sytem
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
-
-
 
 
         private void btnCancelClick(object sender, EventArgs e)
@@ -213,7 +267,7 @@ namespace Group8Sytem
 
                 // Save the data to the database
                 DbConnect dbConnector = new DbConnect();
-                dbConnector.AddComputerPart(name, category, manufacturer, specifications, quantity, price);
+                dbConnector.AddComputerPart(name, category, manufacturer, specifications, quantity, price, GlobalData.LoggedInUsername);
 
                 // Refresh the DataGridView to display the updated data
                 PopulateDataGrid();
@@ -276,7 +330,7 @@ namespace Group8Sytem
 
                 // Update the corresponding record in the database
                 DbConnect dbConnector = new DbConnect();
-                dbConnector.UpdateComputerPart(id, name, category, manufacturer, specifications, quantity, price);
+                dbConnector.UpdateComputerPart(id, name, category, manufacturer, specifications, quantity, price, GlobalData.LoggedInUsername);
 
                 // Show a message to the user indicating success
                 MessageBox.Show("Item updated successfully!");
@@ -295,10 +349,10 @@ namespace Group8Sytem
                 {
                     // Get the ID of the selected row to delete from the database
                     int id = int.Parse(dataGridInventory.Rows[rowIndex].Cells["ID"].Value.ToString());
-
+                        
                     // Delete the corresponding record from the database
                     DbConnect dbConnector = new DbConnect();
-                    dbConnector.DeleteComputerPart(id);
+                    dbConnector.DeleteComputerPart(id, GlobalData.LoggedInUsername);
 
                     // Remove the selected row from the DataGridView
                     dataGridInventory.Rows.RemoveAt(rowIndex);
