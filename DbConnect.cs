@@ -53,7 +53,6 @@ namespace Kape
             }
             catch (Exception ex)
             {
-                // Handle the exception appropriately, e.g., show an error message.
                 MessageBox.Show("Error: " + ex.Message);
             }
             finally
@@ -119,7 +118,6 @@ namespace Kape
             }
             catch (Exception ex)
             {
-                // Handle the exception appropriately, e.g., show an error message.
                 MessageBox.Show("Error: " + ex.Message);
             }
             finally
@@ -128,10 +126,6 @@ namespace Kape
             }
         }
 
-
-
-
-   
 
         public void AddComputerPart(string name, string category, string manufacturer, string specifications, int quantity, decimal price, string user)
         {
@@ -154,7 +148,6 @@ namespace Kape
             }
             catch (Exception ex)
             {
-                // Handle the exception appropriately, e.g., show an error message.
                 MessageBox.Show("Error: " + ex.Message);
             }
             finally
@@ -186,7 +179,7 @@ namespace Kape
             }
             catch (Exception ex)
             {
-                // Handle the exception appropriately, e.g., show an error message.
+       
                 MessageBox.Show("Error: " + ex.Message);
             }
             finally
@@ -201,22 +194,41 @@ namespace Kape
             try
             {
                 OpenConnection();
-
-                // Use MySqlCommand to call the stored procedure
                 MySqlCommand cmd = new MySqlCommand("sp_DeleteComputerPart", GetConnection());
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                // Add parameters for the stored procedure
                 cmd.Parameters.AddWithValue("p_ID", id);
                 cmd.Parameters.AddWithValue("p_User", user);
 
-                // Execute the stored procedure
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-                // Handle the exception appropriately, e.g., show an error message.
                 MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+        public bool AddUser(string username, string password)
+        {
+            try
+            {
+                OpenConnection();
+
+                string query = "INSERT INTO users (Username, Password) VALUES (@Username, @Password)";
+                MySqlCommand cmd = new MySqlCommand(query, GetConnection());
+                cmd.Parameters.AddWithValue("@Username", username);
+                cmd.Parameters.AddWithValue("@Password", password);
+                cmd.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return false; 
             }
             finally
             {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kape;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -53,13 +54,43 @@ namespace Group8Sytem
             }
         }
 
-        private void signupLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            LoginWindow loginWin = new LoginWindow();
-            loginWin.ShowDialog();
-            this.Close();
+            try
+            {
+                // Get the values of the username and password fields
+                string username = UserNameTxt.Text.Trim();
+                string password = PasswordTxt.Text.Trim();
 
+                // Validate that the fields are not empty
+                if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+                {
+                    MessageBox.Show("Username and password cannot be empty.");
+                    return;
+                }
+
+                DbConnect dbConnector = new DbConnect();
+                bool success = dbConnector.AddUser(username, password);
+
+                if (success)
+                {
+                    MessageBox.Show("User successfully registered!");
+                    this.Hide();
+                    LoginWindow loginWin = new LoginWindow();
+                    loginWin.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error: Unable to register user. Please try again.");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
+
     }
 }
