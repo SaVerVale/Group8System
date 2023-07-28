@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,10 +15,16 @@ namespace Kape
 {
     public partial class Form1 : Form
     {
+        
+
         public Form1()
         {
             InitializeComponent();
         }
+
+        // You can now access the dataGridInventory control through the Inventory control
+        // For example, you can access its properties or modify its behavior like this:
+     
 
         private void button1_Click(object sender, EventArgs e)
         {
