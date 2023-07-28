@@ -28,7 +28,7 @@ namespace Kape
             label1.AutoSize = true;
             label1.BackColor = SystemColors.ActiveCaption;
             label1.Font = new Font("Stencil", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(622, 37);
+            label1.Location = new Point(743, 37);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(713, 48);
@@ -62,6 +62,7 @@ namespace Kape
             // inventory
             // 
             inventory.BackColor = Color.LightGray;
+            inventory.BorderStyle = BorderStyle.Fixed3D;
             inventory.Location = new Point(14, 148);
             inventory.Margin = new Padding(4, 5, 4, 5);
             inventory.Name = "inventory";
@@ -95,12 +96,12 @@ namespace Kape
             label2.AutoSize = true;
             label2.BackColor = SystemColors.ActiveCaption;
             label2.Font = new Font("Stencil", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(622, 36);
+            label2.Location = new Point(702, 37);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(713, 48);
+            label2.Size = new Size(795, 48);
             label2.TabIndex = 4;
-            label2.Text = "SOMETHING MANAGEMENT SYSTEM";
+            label2.Text = "COMPUTER PARTS INVENTORY SYSTEM";
             // 
             // inventory1
             // 

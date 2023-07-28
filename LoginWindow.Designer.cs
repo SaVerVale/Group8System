@@ -35,12 +35,14 @@
             label2 = new Label();
             label3 = new Label();
             signupLink = new LinkLabel();
+            panel1 = new Panel();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AccessibleName = "loginLabel";
             label1.AutoSize = true;
+            label1.BackColor = Color.LightSeaGreen;
             label1.Font = new Font("Cooper Black", 48F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(386, 35);
             label1.Margin = new Padding(4, 0, 4, 0);
@@ -53,7 +55,7 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(267, 460);
+            button1.Location = new Point(276, 460);
             button1.Margin = new Padding(4, 5, 4, 5);
             button1.Name = "button1";
             button1.Size = new Size(571, 70);
@@ -89,6 +91,7 @@
             // 
             label2.AccessibleName = "userLabel";
             label2.AutoSize = true;
+            label2.BackColor = Color.LightSeaGreen;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(261, 265);
             label2.Margin = new Padding(4, 0, 4, 0);
@@ -101,6 +104,7 @@
             // 
             label3.AccessibleName = "passwordLabel";
             label3.AutoSize = true;
+            label3.BackColor = Color.LightSeaGreen;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label3.Location = new Point(261, 355);
             label3.Margin = new Padding(4, 0, 4, 0);
@@ -113,6 +117,8 @@
             // 
             signupLink.AccessibleName = "signupLink";
             signupLink.AutoSize = true;
+            signupLink.BackColor = Color.LightSeaGreen;
+            signupLink.LinkColor = SystemColors.Info;
             signupLink.Location = new Point(426, 578);
             signupLink.Margin = new Padding(4, 0, 4, 0);
             signupLink.Name = "signupLink";
@@ -121,6 +127,14 @@
             signupLink.TabStop = true;
             signupLink.Text = "Don't have an account? Sign Up!";
             signupLink.LinkClicked += signupLink_LinkClicked;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.LightSeaGreen;
+            panel1.Location = new Point(-1, 2);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1167, 766);
+            panel1.TabIndex = 7;
             // 
             // LoginWindow
             // 
@@ -134,6 +148,7 @@
             Controls.Add(PasswordTxt);
             Controls.Add(button1);
             Controls.Add(label1);
+            Controls.Add(panel1);
             Margin = new Padding(4, 5, 4, 5);
             Name = "LoginWindow";
             StartPosition = FormStartPosition.CenterScreen;
@@ -151,5 +166,6 @@
         private Label label2;
         private Label label3;
         private LinkLabel signupLink;
+        private Panel panel1;
     }
 }

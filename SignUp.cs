@@ -92,5 +92,12 @@ namespace Group8Sytem
             }
         }
 
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            LoginWindow lw = new LoginWindow();
+            lw.ShowDialog();
+            this.Close();
+        }
     }
 }
