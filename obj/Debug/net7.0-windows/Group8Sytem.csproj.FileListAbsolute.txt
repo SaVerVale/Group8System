@@ -54,7 +54,6 @@ C:\Users\Vinn\DesktopApp\Group8System\bin\Debug\net7.0-windows\runtimes\win-x64\
 C:\Users\Vinn\DesktopApp\Group8System\bin\Debug\net7.0-windows\runtimes\win-x64\native\krbcc64.dll
 C:\Users\Vinn\DesktopApp\Group8System\obj\Debug\net7.0-windows\Group8Sytem.csproj.AssemblyReference.cache
 C:\Users\Vinn\DesktopApp\Group8System\obj\Debug\net7.0-windows\Kape.Form1.resources
-C:\Users\Vinn\DesktopApp\Group8System\obj\Debug\net7.0-windows\Group8Sytem.RecentUpdates.resources
 C:\Users\Vinn\DesktopApp\Group8System\obj\Debug\net7.0-windows\Group8Sytem.csproj.GenerateResource.cache
 C:\Users\Vinn\DesktopApp\Group8System\obj\Debug\net7.0-windows\Group8Sytem.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Vinn\DesktopApp\Group8System\obj\Debug\net7.0-windows\Group8Sytem.AssemblyInfoInputs.cache
@@ -64,3 +63,4 @@ C:\Users\Vinn\DesktopApp\Group8System\obj\Debug\net7.0-windows\Group8Sytem.cspro
 C:\Users\Vinn\DesktopApp\Group8System\obj\Debug\net7.0-windows\Group8Sytem.genruntimeconfig.cache
 C:\Users\Vinn\DesktopApp\Group8System\obj\Debug\net7.0-windows\ref\Group8Sytem.dll
 C:\Users\Vinn\DesktopApp\Group8System\obj\Debug\net7.0-windows\Group8Sytem.Inventory.resources
+C:\Users\Vinn\DesktopApp\Group8System\obj\Debug\net7.0-windows\Group8Sytem.History.resources

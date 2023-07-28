@@ -33,7 +33,7 @@
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
-            recentUpdates1 = new Group8Sytem.RecentUpdates();
+            recentUpdates1 = new Group8Sytem.History();
             panel1 = new Panel();
             inventory1 = new Group8Sytem.Inventory();
             panel1.SuspendLayout();
@@ -138,7 +138,7 @@
         private Button button2;
         private Button button3;
         private Button button4;
-        private Group8Sytem.RecentUpdates recentUpdates1;
+        private Group8Sytem.History recentUpdates1;
         private Panel panel1;
         private Group8Sytem.Inventory inventory1;
     }

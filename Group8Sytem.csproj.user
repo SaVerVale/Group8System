@@ -7,7 +7,7 @@
     <Compile Update="Inventory.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="RecentUpdates.cs">
+    <Compile Update="History.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>

@@ -63,22 +63,20 @@ namespace Kape
 
             return dataTable;
         }
-        /*
-        public void UpdateComputerPartsData(DataTable updatedDataTable)
+
+        public DataTable GetHistoryData()
         {
+            DataTable dataTable = new DataTable();
+
             try
             {
                 OpenConnection();
 
-                // Use MySqlDataAdapter.Update to save the changes back to the database
-                MySqlCommandBuilder builder = new MySqlCommandBuilder();
-                builder.DataAdapter = new MySqlDataAdapter("SELECT ID, Name, Category, Manufacturer, Specifications, Quantity, Price FROM computer_parts", GetConnection());
+                string query = "SELECT HistoryID, ID, Name, Category, Manufacturer, Specifications, Quantity, Price, User, Action, Datetime FROM computer_parts_history;";
+                MySqlCommand cmd = new MySqlCommand(query, GetConnection());
 
-                // Set the UpdateCommand to handle the update operation
-                builder.GetUpdateCommand();
-
-                // Apply the changes to the database
-                builder.DataAdapter.Update(updatedDataTable);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);   
+                adapter.Fill(dataTable);
             }
             catch (Exception ex)
             {
@@ -89,9 +87,10 @@ namespace Kape
             {
                 CloseConnection();
             }
+
+            return dataTable;
         }
 
-        */
 
         public void UpdateComputerPartsData(DataTable updatedDataTable, string user)
         {
@@ -99,51 +98,22 @@ namespace Kape
             {
                 OpenConnection();
 
-                // Use MySqlDataAdapter.Update to save the changes back to the database
-                MySqlCommandBuilder builder = new MySqlCommandBuilder();
-                builder.DataAdapter = new MySqlDataAdapter("SELECT ID, Name, Category, Manufacturer, Specifications, Quantity, Price FROM computer_parts", GetConnection());
-
-                // Set the UpdateCommand to handle the update operation
-                builder.GetUpdateCommand();
-
-                // Apply the changes to the database
-                builder.DataAdapter.Update(updatedDataTable);
-
-                // Console.WriteLine("Number of Rows in updatedDataTable: " + updatedDataTable.Rows.Count);
-
-                // Insert changes into computer_parts_history table if quantity changes
                 foreach (DataRow row in updatedDataTable.Rows)
                 {
-                    using (MySqlCommand insertCommand = new MySqlCommand(
-                        "INSERT INTO computer_parts_history (ID, Name, Category, Manufacturer, Specifications, Quantity, Price, User, Action, Datetime) " +
-                        "VALUES (@ID, @Name, @Category, @Manufacturer, @Specifications, @Quantity, @Price, @User, @Action, @Datetime)",
-                        GetConnection()))
+                    using (MySqlCommand updateCommand = new MySqlCommand("CALL sp_UpdateQuantity(@ID, @Name, @Category, @Manufacturer, @Specifications, @Quantity, @Price, @User, @Action, @Datetime)", GetConnection()))
                     {
-                        insertCommand.Parameters.AddWithValue("@ID", row["ID"]);
-                        insertCommand.Parameters.AddWithValue("@Name", row["Name"]);
-                        insertCommand.Parameters.AddWithValue("@Category", row["Category"]);
-                        insertCommand.Parameters.AddWithValue("@Manufacturer", row["Manufacturer"]);
-                        insertCommand.Parameters.AddWithValue("@Specifications", row["Specifications"]);
-                        insertCommand.Parameters.AddWithValue("@Quantity", row["Quantity"]);
-                        insertCommand.Parameters.AddWithValue("@Price", row["Price"]);
-                        insertCommand.Parameters.AddWithValue("@User", user);
+                        updateCommand.Parameters.AddWithValue("@ID", row["ID"]);
+                        updateCommand.Parameters.AddWithValue("@Name", row["Name"]);
+                        updateCommand.Parameters.AddWithValue("@Category", row["Category"]);
+                        updateCommand.Parameters.AddWithValue("@Manufacturer", row["Manufacturer"]);
+                        updateCommand.Parameters.AddWithValue("@Specifications", row["Specifications"]);
+                        updateCommand.Parameters.AddWithValue("@Quantity", row["Quantity"]);
+                        updateCommand.Parameters.AddWithValue("@Price", row["Price"]);
+                        updateCommand.Parameters.AddWithValue("@User", user);
+                        updateCommand.Parameters.AddWithValue("@Action", "Changed in stock");
+                        updateCommand.Parameters.AddWithValue("@Datetime", DateTime.Now); 
 
-                        int originalQuantity = (int)row["Quantity", DataRowVersion.Original];
-
-                        int updatedQuantity = (int)row["Quantity"];
-                        int quantityChange = updatedQuantity - originalQuantity;
-
-                        string actionDescription = quantityChange > 0 ? "ADDED " : "SUBTRACTED ";
-                        string changeAction = $"{actionDescription}{Math.Abs(quantityChange)} TO STOCK";
-
-                        insertCommand.Parameters.AddWithValue("@Action", "Changed in stock");
-                        insertCommand.Parameters.AddWithValue("@Datetime", DateTime.Now); // Replace with the appropriate timestamp
-
-                        // Only execute the INSERT if quantity has changed
-
-
-                        insertCommand.ExecuteNonQuery();
-
+                        updateCommand.ExecuteNonQuery();
                     }
                 }
             }
@@ -159,101 +129,9 @@ namespace Kape
         }
 
 
-        //public void UpdateComputerPartsData(DataTable updatedDataTable, DataTable originalDataTable)
-        //{
-        //    try
-        //    {
-        //        OpenConnection();
-
-        //        // Use MySqlDataAdapter.Update to save the changes back to the database
-        //        MySqlCommandBuilder builder = new MySqlCommandBuilder();
-        //        builder.DataAdapter = new MySqlDataAdapter("SELECT ID, Name, Category, Manufacturer, Specifications, Quantity, Price FROM computer_parts", GetConnection());
-
-        //        // Set the UpdateCommand to handle the update operation
-        //        builder.GetUpdateCommand();
-
-        //        // Apply the changes to the database
-        //        builder.DataAdapter.Update(updatedDataTable);
-
-        //        // Insert changes into computer_parts_history table if quantity changes
-        //        foreach (DataRow updatedRow in updatedDataTable.Rows)
-        //        {
-        //            int id = Convert.ToInt32(updatedRow["ID"]);
-        //            DataRow originalRow = originalDataTable.Rows.Find(id);
-
-        //            if (originalRow != null && originalRow["Quantity"] != updatedRow["Quantity"])
-        //            {
-        //                int originalQuantity = Convert.ToInt32(originalRow["Quantity"]);
-        //                int updatedQuantity = Convert.ToInt32(updatedRow["Quantity"]);
-        //                int quantityChange = updatedQuantity - originalQuantity;
-
-        //                using (MySqlCommand insertCommand = new MySqlCommand(
-        //                    "INSERT INTO computer_parts_history (ID, Name, Category, Manufacturer, Specifications, Quantity, Price, User, Action, Datetime) " +
-        //                    "VALUES (@ID, @Name, @Category, @Manufacturer, @Specifications, @Quantity, @Price, @User, @Action, @Datetime)",
-        //                    GetConnection()))
-        //                {
-        //                    insertCommand.Parameters.AddWithValue("@ID", updatedRow["ID"]);
-        //                    insertCommand.Parameters.AddWithValue("@Name", updatedRow["Name"]);
-        //                    insertCommand.Parameters.AddWithValue("@Category", updatedRow["Category"]);
-        //                    insertCommand.Parameters.AddWithValue("@Manufacturer", updatedRow["Manufacturer"]);
-        //                    insertCommand.Parameters.AddWithValue("@Specifications", updatedRow["Specifications"]);
-        //                    insertCommand.Parameters.AddWithValue("@Quantity", updatedRow["Quantity"]);
-        //                    insertCommand.Parameters.AddWithValue("@Price", updatedRow["Price"]);
-        //                    insertCommand.Parameters.AddWithValue("@User", "user123");
-
-        //                    string actionDescription = quantityChange > 0 ? "ADDED " : "SUBTRACTED ";
-        //                    string changeAction = $"{actionDescription}{Math.Abs(quantityChange)} TO STOCK";
-
-        //                    insertCommand.Parameters.AddWithValue("@Action", changeAction);
-        //                    insertCommand.Parameters.AddWithValue("@Datetime", DateTime.Now); // Replace with the appropriate timestamp
-
-        //                    insertCommand.ExecuteNonQuery();
-        //                }
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        // Handle the exception appropriately, e.g., show an error message.
-        //        MessageBox.Show("Error: " + ex.Message);
-        //    }
-        //    finally
-        //    {
-        //        CloseConnection();
-        //    }
-        //}
 
 
-
-        //public void AddComputerPart(string name, string category, string manufacturer, string specifications, int quantity, decimal price)
-        //{
-        //    try
-        //    {
-        //        OpenConnection();
-
-        //        string query = "INSERT INTO computer_parts (Name, Category, Manufacturer, Specifications, Quantity, Price) " +
-        //                       "VALUES (@Name, @Category, @Manufacturer, @Specifications, @Quantity, @Price);";
-
-        //        MySqlCommand cmd = new MySqlCommand(query, GetConnection());
-        //        cmd.Parameters.AddWithValue("@Name", name);
-        //        cmd.Parameters.AddWithValue("@Category", category);
-        //        cmd.Parameters.AddWithValue("@Manufacturer", manufacturer);
-        //        cmd.Parameters.AddWithValue("@Specifications", specifications);
-        //        cmd.Parameters.AddWithValue("@Quantity", quantity);
-        //        cmd.Parameters.AddWithValue("@Price", price);
-
-        //        cmd.ExecuteNonQuery();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        // Handle the exception appropriately, e.g., show an error message.
-        //        MessageBox.Show("Error: " + ex.Message);
-        //    }
-        //    finally
-        //    {
-        //        CloseConnection();
-        //    }
-        //}
+   
 
         public void AddComputerPart(string name, string category, string manufacturer, string specifications, int quantity, decimal price, string user)
         {
@@ -285,37 +163,6 @@ namespace Kape
             }
         }
 
-
-        //public void UpdateComputerPart(int id, string name, string category, string manufacturer, string specifications, int quantity, decimal price)
-        //{
-        //    try
-        //    {
-        //        OpenConnection();
-
-        //        string query = "UPDATE computer_parts SET Name = @Name, Category = @Category, Manufacturer = @Manufacturer, " +
-        //                       "Specifications = @Specifications, Quantity = @Quantity, Price = @Price WHERE ID = @ID;";
-
-        //        MySqlCommand cmd = new MySqlCommand(query, GetConnection());
-        //        cmd.Parameters.AddWithValue("@ID", id);
-        //        cmd.Parameters.AddWithValue("@Name", name);
-        //        cmd.Parameters.AddWithValue("@Category", category);
-        //        cmd.Parameters.AddWithValue("@Manufacturer", manufacturer);
-        //        cmd.Parameters.AddWithValue("@Specifications", specifications);
-        //        cmd.Parameters.AddWithValue("@Quantity", quantity);
-        //        cmd.Parameters.AddWithValue("@Price", price);
-
-        //        cmd.ExecuteNonQuery();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        // Handle the exception appropriately, e.g., show an error message.
-        //        MessageBox.Show("Error: " + ex.Message);
-        //    }
-        //    finally
-        //    {
-        //        CloseConnection();
-        //    }
-        //}
 
         public void UpdateComputerPart(int id, string name, string category, string manufacturer, string specifications, int quantity, decimal price, string user)
         {

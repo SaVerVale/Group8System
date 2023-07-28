@@ -26,6 +26,7 @@ namespace Group8Sytem
             PopulateDataGrid();
         }
 
+
         public void PopulateDataGrid()
         {
             try
@@ -33,14 +34,19 @@ namespace Group8Sytem
                 DbConnect dbConnector = new DbConnect();
                 originalDataTable = dbConnector.GetComputerPartsData(); // Store the original DataTable
 
-                dataGridInventory.CellClick += DataGridInventory_CellClick;
+                dataGridInventory.CellClick -= DataGridInventory_CellClick;
 
                 // Create a copy of the originalDataTable to be used as a working copy
                 DataTable dataSource = originalDataTable.Copy();
                 dataGridInventory.DataSource = dataSource;
 
+                RemoveButtonColumn("ButtonColumn1");
+                RemoveButtonColumn("ButtonColumn2");
+
                 AddButtonColumn("Add", "ButtonColumn1", "Plus", Color.Green);
                 AddButtonColumn("Subtract", "ButtonColumn2", "Subtract", Color.Red);
+
+                dataGridInventory.CellClick += DataGridInventory_CellClick;
             }
             catch (Exception ex)
             {
@@ -48,6 +54,16 @@ namespace Group8Sytem
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+        private void RemoveButtonColumn(string name)
+        {
+            DataGridViewColumn column = dataGridInventory.Columns[name];
+            if (column != null)
+            {
+                dataGridInventory.Columns.Remove(column);
+            }
+        }
+
 
         private void SetDataGridDataSource(DataTable dataSource)
         {
@@ -64,20 +80,34 @@ namespace Group8Sytem
             buttonColumn.Text = text;
             buttonColumn.UseColumnTextForButtonValue = true;
 
+            // Unsubscribe the previous CellFormatting event handler for this column, if any
+            dataGridInventory.CellFormatting -= ButtonColumn_CellFormatting(name, buttonColor);
+
             // Add the button column to the DataGridView
             dataGridInventory.Columns.Add(buttonColumn);
 
             // Handle the CellFormatting event to set the button color
-            dataGridInventory.CellFormatting += (sender, e) =>
+            dataGridInventory.CellFormatting += ButtonColumn_CellFormatting(name, buttonColor);
+        }
+
+        private DataGridViewCellFormattingEventHandler ButtonColumn_CellFormatting(string columnName, Color buttonColor)
+        {
+            return (sender, e) =>
             {
-                if (e.RowIndex >= 0 && e.ColumnIndex == dataGridInventory.Columns[name].Index)
+                if (e.RowIndex >= 0 && dataGridInventory.Columns.Contains(columnName))
                 {
-                    // Set the button color
-                    e.CellStyle.BackColor = buttonColor;
-                    e.CellStyle.ForeColor = buttonColor; // Customize the text color as needed
+                    DataGridViewColumn column = dataGridInventory.Columns[columnName];
+                    if (e.ColumnIndex == column.Index)
+                    {
+                        // Set the button color
+                        e.CellStyle.BackColor = buttonColor;
+                        e.CellStyle.ForeColor = buttonColor; // Customize the text color as needed
+                    }
                 }
             };
         }
+
+
 
         private void DataGridInventory_CellClick(object? sender, DataGridViewCellEventArgs e)
         {
@@ -123,54 +153,6 @@ namespace Group8Sytem
         {
             return dataGridInventory;
         }
-        /*
-                private void btnSaveClick(object sender, EventArgs e)
-                {
-                    try
-                    {
-                        // Create a DataTable to store the changes made in the DataGridView
-                        DataTable updatedDataTable = ((DataTable)dataGridInventory.DataSource).GetChanges();
-
-                        if (updatedDataTable != null)
-                        {
-                            // Filter out added rows from the updatedDataTable
-                            var modifiedRows = updatedDataTable.Rows.Cast<DataRow>()
-                                .Where(r => r.RowState != DataRowState.Added)
-                                .ToArray();
-
-                            if (modifiedRows.Any())
-                            {
-                                DbConnect dbConnector = new DbConnect();
-                                dbConnector.UpdateComputerPartsData(updatedDataTable);
-
-                                MessageBox.Show("Changes saved successfully!");
-
-                                // Update the modified rows directly in the originalDataTable
-                                foreach (DataRow modifiedRow in modifiedRows)
-                                {
-                                    DataRow originalRow = originalDataTable.Rows.Cast<DataRow>()
-                                        .FirstOrDefault(r => r["ID"].Equals(modifiedRow["ID"]));
-
-                                    if (originalRow != null)
-                                    {
-                                        originalRow.ItemArray = modifiedRow.ItemArray;
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                // No changes were made, show a message to the user
-                                MessageBox.Show("No changes to save.");
-                            }
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        // Handle the exception appropriately, e.g., show an error message.
-                        MessageBox.Show("Error: " + ex.Message);
-                    }
-                }
-        */
 
         private void btnSaveClick(object sender, EventArgs e)
         {
@@ -227,26 +209,38 @@ namespace Group8Sytem
             }
         }
 
-
         private void btnCancelClick(object sender, EventArgs e)
         {
-            // Revert the table to the original count values
-            if (originalDataTable != null)
+            try
             {
-                try
-                {
-                    DataTable dataSource = ((DataTable)dataGridInventory.DataSource);
-                    dataSource.Clear();
-                    dataSource.Merge(originalDataTable);
-                    dataGridInventory.Refresh(); // Refresh the DataGridView to display the original data
-                }
-                catch (Exception ex)
-                {
-                    // Handle the exception appropriately, e.g., show an error message.
-                    MessageBox.Show("Error: " + ex.Message);
-                }
+                // Reload the data directly from the database
+                DbConnect dbConnector = new DbConnect();
+                DataTable dataSource = dbConnector.GetComputerPartsData();
+
+                // Set the dataGridInventory's DataSource to the new data source
+                dataGridInventory.DataSource = dataSource;
+
+                // Optionally, you can clear the text fields
+                ClearTextFields();
+            }
+            catch (Exception ex)
+            {
+                // Handle the exception appropriately, e.g., show an error message.
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+        private void ClearTextFields()
+        {
+            // Clear the text fields
+            txtName.Text = "";
+            txtCategory.Text = "";
+            txtManufacturer.Text = "";
+            txtSpecifications.Text = "";
+            txtQuantity.Text = "";
+            txtPrice.Text = "";
+        }
+
 
         private void btnAddClick(object sender, EventArgs e)
         {
