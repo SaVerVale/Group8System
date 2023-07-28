@@ -37,7 +37,7 @@ namespace Kape
             // 
             // history
             // 
-            history.BackColor = Color.LightGray;
+            history.BackColor = Color.LightSeaGreen;
             history.Location = new Point(17, 263);
             history.Margin = new Padding(4, 5, 4, 5);
             history.Name = "history";
@@ -49,7 +49,7 @@ namespace Kape
             // 
             // label3
             // 
-            label3.BackColor = Color.LightGray;
+            label3.BackColor = Color.LightSeaGreen;
             label3.Location = new Point(17, 378);
             label3.Margin = new Padding(4, 5, 4, 5);
             label3.Name = "label3";
@@ -61,7 +61,7 @@ namespace Kape
             // 
             // inventory
             // 
-            inventory.BackColor = Color.LightGray;
+            inventory.BackColor = Color.LightSeaGreen;
             inventory.BorderStyle = BorderStyle.Fixed3D;
             inventory.Location = new Point(14, 148);
             inventory.Margin = new Padding(4, 5, 4, 5);
