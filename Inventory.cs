@@ -406,23 +406,28 @@ namespace Group8Sytem
 
         private void txtSearchTextChanged(object sender, EventArgs e)
         {
-            // Perform the search when the text in the txtSearch text box changes
             string searchKeyword = txtSearch.Text.Trim();
 
-            // Get the original data source from the DataGridView
             DataTable originalDataSource = (DataTable)dataGridInventory.DataSource;
-
-            // Create a new DataTable to store the filtered rows
             DataTable filteredDataSource = originalDataSource.Clone();
 
-            // Loop through the original data source and find rows that match the search keyword
             foreach (DataRow row in originalDataSource.Rows)
             {
-                // Assuming you want to search in the "Name" column. Replace "Name" with the desired column name.
-                string columnValue = row["Name"].ToString();
+                // Loop through all columns in the row and check if any cell value contains the search keyword
+                bool matchFound = false;
+                foreach (DataColumn column in originalDataSource.Columns)
+                {
+                    string cellValue = row[column.ColumnName].ToString();
 
-                // Case-insensitive search. Modify this condition if you need a different search behavior.
-                if (columnValue.IndexOf(searchKeyword, StringComparison.OrdinalIgnoreCase) >= 0)
+                    
+                    if (cellValue.IndexOf(searchKeyword, StringComparison.OrdinalIgnoreCase) >= 0)
+                    {
+                        matchFound = true;
+                        break;
+                    }
+                }
+
+                if (matchFound)
                 {
                     filteredDataSource.ImportRow(row);
                 }

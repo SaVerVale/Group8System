@@ -69,12 +69,23 @@ namespace Group8Sytem
             // Loop through the original data source and find rows that match the search keyword
             foreach (DataRow row in originalDataSource.Rows)
             {
-                // Assuming you want to search in the "Name" column. Replace "Name" with the desired column name.
-                string columnValue = row["Name"].ToString();
-
-                // Case-insensitive search. Modify this condition if you need a different search behavior.
-                if (columnValue.IndexOf(searchKeyword, StringComparison.OrdinalIgnoreCase) >= 0)
+                // Loop through all columns in the row and check if any cell value contains the search keyword
+                bool matchFound = false;
+                foreach (DataColumn column in originalDataSource.Columns)
                 {
+                    string cellValue = row[column.ColumnName].ToString();
+
+                    // Case-insensitive search. Modify this condition if you need a different search behavior.
+                    if (cellValue.IndexOf(searchKeyword, StringComparison.OrdinalIgnoreCase) >= 0)
+                    {
+                        matchFound = true;
+                        break;
+                    }
+                }
+
+                if (matchFound)
+                {
+                    // Add the entire row to the filtered data source if any cell value contains the search keyword
                     filteredDataSource.ImportRow(row);
                 }
             }
@@ -82,5 +93,6 @@ namespace Group8Sytem
             // Set the filtered data source as the data source for the DataGridView
             dataGridViewHistory.DataSource = filteredDataSource;
         }
+
     }
 }
